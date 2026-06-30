@@ -1,0 +1,67 @@
+openapi: 3.0.0
+info:
+  title: Libros Control 2 20255606
+  version: 1.0.0
+  description: ''
+servers:
+  - url: 'http://127.0.0.1:5000'
+paths:
+  /libros:
+    post:
+      summary: Crear libro
+      responses: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                titulo:
+                  type: string
+                autor:
+                  type: string
+                disponible:
+                  type: boolean
+            example:
+              id: 300
+              titulo: Nuevo libro
+              autor: Chespiro
+              disponible: true
+    put:
+      summary: Actualizar libro
+      responses: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                titulo:
+                  type: string
+                autor:
+                  type: string
+                disponible:
+                  type: boolean
+            example:
+              id: 300
+              titulo: Nuevo libro ya no es nuevo
+              autor: Chespiro 2
+              disponible: false
+    get:
+      summary: Obtener libros
+      responses: {}
+  /libros/300:
+    get:
+      summary: Obtener libro por ID
+      responses: {}
+    delete:
+      summary: Eliminar libro por ID
+      responses: {}
+  /:
+    get:
+      summary: Inicio
+      responses: {}
